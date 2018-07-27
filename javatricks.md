@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/
