@@ -16,7 +16,8 @@ public class Solution {
         return stack.pop();
     }
 
-    public char dequeueCharacter(){
+    public char dequeueCharacter() {
         return queue.remove();
-        
+
     }
+}
