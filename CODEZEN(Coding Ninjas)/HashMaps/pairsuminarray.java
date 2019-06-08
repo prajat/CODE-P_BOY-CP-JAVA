@@ -25,33 +25,21 @@ public class pairsuminarray {
         //     }
 
         // }
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < arr.length; i++) {
-            if (map.containsKey(arr[i])) {
-                map.put(arr[i], map.get(arr[i]) + 1);
-            } else {
-                map.put(arr[i], 1);
-            }
-
-        }
+        HashSet<Integer> set = new HashSet<>();
         for (int i = 0; i < arr.length; i++) {
             int value = num - arr[i];
-            if (map.containsKey(value)) {
-                if (map.get(value) >= 1) {
-                    if (arr[i] < value) {
+            if (set.containsKey(value)) {
+                if (arr[i] < value) {
                     System.out.print(arr[i] + " " + value);
-                }
-                else {
+                } else {
                     System.out.print(value + " " + arr[i]);
                 }
                 System.out.println();
-                    map.put(arr[i], map.get(value) - 1);
-                    
-                    
-                }
-
             }
+            set.add(arr[i]);
+
         }
+        
     
     
     }
