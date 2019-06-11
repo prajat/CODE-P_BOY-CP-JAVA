@@ -5,7 +5,7 @@ import java.util.*;
 public class findfloorvalue {
 
     public static int findFloor(int[] array, int element) {
-        return binarysearch(array, 0, array.length, element);
+        return binarysearch(array, 0, array.length-1, element);
 
     }
 
