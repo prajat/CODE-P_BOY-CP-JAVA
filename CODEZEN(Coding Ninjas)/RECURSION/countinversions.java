@@ -6,26 +6,57 @@ public class countinversions {
 
     public static void main(String[] args) {
 
-        int[] A = { 2,5,1,3,4 };
-        System.out.println(solve(A,0));
+        int[] A = { 3, 2, 1 };
+        System.out.println(solve(A, A.length));
     }
-    
-    public static long solve(int[] A, int start) {
+     
+    public static long solve(int[] A, int n) {
 
-        if (start == A.length) {
-            return 0;
+        int[] temp = new int[A.length];
+        return mergesort(A, temp, 0, A.length - 1);
+
+    }
+
+    public static long mergesort(int[] arr, int[] temp, int left, int right) {
+
+        long invcount = 0;
+        if (right > left) {
+            int mid = (right+left) / 2;
+            invcount = mergesort(arr, temp, left, mid);
+            invcount += mergesort(arr, temp, mid + 1, right);
+
+            invcount += merge(arr, temp, left, mid + 1, right);
+
         }
-        int firstn = A[start];
-        long smallans = solve(A, start + 1);
+        return invcount;
 
-        long count=0;
-        for (int i = start; i < A.length; i++) {
-            if (firstn > A[i]) {
-                count++;
+    }
+
+    public static long merge(int[] arr, int[] temp, int left, int mid, int right) {
+        int i = left;
+        int j = mid;
+        int k = left;
+        long invcount=0;
+        while ((i <= mid - 1) && (j <= right)) {
+            if (arr[i] <= arr[j]) {
+                temp[k++] = arr[i++];
+            } else {
+                temp[k++] = arr[j++];
+                invcount += (long)(mid - i);
             }
-
         }
-        return smallans + count;
-
+        while (i <= mid-1) {
+            temp[k++] = arr[i++];
+        }
+        while (j <= right) {
+            temp[k++] = arr[j++];
+        }
+        for (int x = left; x <= right; x++) {
+            arr[x] = temp[x];
+        }
+        return invcount;
+        
     }
+
+
 }
