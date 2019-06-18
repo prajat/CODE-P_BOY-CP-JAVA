@@ -61,5 +61,9 @@ public class nqueens {
         placeNQueens(4);
     }
 
-
+    
+    
+    
+    
+    
 }
