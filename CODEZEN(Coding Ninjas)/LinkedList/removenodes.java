@@ -1,3 +1,6 @@
+//not solved yet
+
+
 import java.util.*;
 class ListNode<t> {
 	public t data;
@@ -24,7 +27,7 @@ public class solution {
 
         int count=1;
         for (int i = 0; i < size; i++) {
-            int index = Math.pow(2, i);
+            int index = (int)Math.pow(2, i);
 
             while (temp != null && count < index) {
                 temp = temp.next;
