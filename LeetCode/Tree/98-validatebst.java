@@ -1,4 +1,3 @@
-import java.util.*;
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -10,16 +9,16 @@ import java.util.*;
  */
 class Solution {
     public boolean isValidBST(TreeNode root) {
-        if(root==null){
-            return true;
-        }
-
-
-        
-
-
-
-        return isValidBST(root.left) && isValidBST(root.right);
-        
-    }
-}
+         return isvalid(root,null,null);
+         
+     }
+     public boolean isvalid(TreeNode root,Integer min,Integer max){
+         if(root==null){
+             return true;
+         }
+         if((min!=null&&root.val<=min) ||(max!=null && root.val>=max)){
+             return false;
+         }
+         return isvalid(root.left, min, root.val) && isvalid(root.right, root.val, max);
+     }
+ }
