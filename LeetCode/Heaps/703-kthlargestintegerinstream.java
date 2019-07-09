@@ -29,7 +29,7 @@ class solution1 { // using max heap
     }
 }
 
-class sloution2 { // using maxheap of k size
+class sloution2 { // using minheap of k size
     PriorityQueue<Integer> heap;
     int k;
 
@@ -53,7 +53,6 @@ class sloution2 { // using maxheap of k size
         return heap.peek();
 
     }
-
 }
 
 /**
