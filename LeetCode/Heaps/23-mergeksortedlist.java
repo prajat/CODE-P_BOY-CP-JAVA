@@ -9,7 +9,13 @@ import java.util.*;
  */
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        PriorityQueue<ListNode> heap=new PriorityQueue<>();
+        PriorityQueue<ListNode> heap=new PriorityQueue<>(new Comparator<ListNode>() {
+            public int compare(ListNode obj1,ListNode obj2){
+                if(obj1.val>obj2.val)
+                return 1;
+                else return -1;
+            }
+        });
         for(int i=0;i<lists.length;i++){
             ListNode currhead=lists[i];
             while(currhead!=temp){
