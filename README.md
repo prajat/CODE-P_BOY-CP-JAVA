@@ -8,5 +8,6 @@ I use this repository to store the solutions of problems which I solve from vari
  2. Geeks for geeks
  3. CODEZEN(Coding Ninjas)
  4. INTERVIEWBIT
+ 5. LeetCode
  *********************************************************************************************************************
 Note: If you find any bugs in the code or have any doubts regarding the codes feel free to raise an issue or a PR.
