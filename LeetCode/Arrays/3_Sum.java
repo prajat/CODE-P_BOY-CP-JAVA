@@ -1,11 +1,6 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.TreeSet;
-
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-
-        List<List<Integer>> ans = new ArrayList<>();
+           List<List<Integer>> ans = new ArrayList<>();
         TreeSet<String> set = new TreeSet<>();
         ArrayList<Integer> list = new ArrayList<>();
         
@@ -30,15 +25,14 @@ class Solution {
                     r--;
 
                 } else if (nums[i] + nums[l] + nums[r] < 0) {
-                    j++;
+                    l++;
 
                 } else {
-                    k--;
+                    r--;
                 }
             }
 
         }
         return ans;
-
     }
 }
